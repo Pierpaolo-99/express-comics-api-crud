@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3007;
 const comicsRouter = require('./routers/comics')
+const videosRouter = require('./routers/videos')
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
@@ -17,3 +18,5 @@ app.use(express.json())
 
 // middleware
 app.use('/api/v1/comics', comicsRouter)
+
+app.use('/api/v1/videos', videosRouter)
