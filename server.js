@@ -11,5 +11,9 @@ app.get('/', (req, res) => {
   res.send('Welcome to my server');
 });
 
+app.use(express.static('public'));
+
+app.use(express.json())
+
 // middleware
 app.use('/api/v1/comics', comicsRouter)
